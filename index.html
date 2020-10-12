@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="pokopoko" style="height: 900px; width:500px"></div>
+    <script src="loader.js"></script>
+    <script>
+        google.charts.load('current',{"packages": ['corechart']});
+        google.charts.setOnLoadCallback(kayesChart);
+
+        function kayesChart(){
+            var datas = google.visualization.arrayToDataTable([
+                ['Task','Hours Par Day'],
+                ['Office', 9.5],
+                ['Privet', 3.5],
+                ['Sleep', 7],
+                ['Others', 4]
+            ]);
+            var option = {
+                title : "MY Daily Routine"
+            };
+            var pieChart = new google.visualization.PieChart(document.getElementById("pokopoko"));
+            pieChart.draw(datas,option);
+
+        }
+    </script>
+</body>
+</html>
